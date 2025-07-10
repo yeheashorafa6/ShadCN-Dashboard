@@ -1,4 +1,4 @@
-import { Inbox, Search, Settings, Calendar, Home } from "lucide-react";
+import { Inbox, Search, Settings, Calendar, Home , User2 , ChevronUp , User , LogOut , Plus , Projector , ChevronDown , ToolCase} from "lucide-react";
 import React from "react";
 import {
   Sidebar,
@@ -24,12 +24,7 @@ import {
   DropdownMenuSeparator,
 } from "../ui/dropdown-menu";
 import { DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu";
-import { User2 } from "lucide-react";
-import { ChevronUp } from "lucide-react";
-import { User } from "lucide-react";
-import { LogOut } from "lucide-react";
-import { Plus } from "lucide-react";
-import { Projector } from "lucide-react";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../ui/collapsible";
 
 const items = [
   {
@@ -115,7 +110,7 @@ function AppSidebar() {
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
                   <Link href={"/"}>
-                    <Plus/>
+                    <Plus />
                     Add New Projects
                   </Link>
                 </SidebarMenuButton>
@@ -123,6 +118,39 @@ function AppSidebar() {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
+        {/* COLLAPSIBLE */}
+        <Collapsible defaultOpen className="group/collapsible">
+          <SidebarGroup>
+            <SidebarGroupLabel asChild>
+              <CollapsibleTrigger>
+                Service
+                <ChevronDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
+              </CollapsibleTrigger>
+            </SidebarGroupLabel>
+            <CollapsibleContent>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton asChild>
+                      <Link href={"/"}>
+                        <ToolCase  />
+                        See All Services
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton asChild>
+                      <Link href={"/"}>
+                        <Plus />
+                        Add New Service
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </CollapsibleContent>
+          </SidebarGroup>
+        </Collapsible>
       </SidebarContent>
       <SidebarFooter>
         <SidebarMenu>
