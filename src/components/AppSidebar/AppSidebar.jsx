@@ -1,4 +1,22 @@
-import { Inbox, Search, Settings, Calendar, Home , User2 , ChevronUp , User , LogOut , Plus , Projector , ChevronDown , ToolCase} from "lucide-react";
+import {
+  Inbox,
+  Search,
+  Settings,
+  Calendar,
+  Home,
+  User2,
+  ChevronUp,
+  User,
+  LogOut,
+  Plus,
+  Projector,
+  ChevronDown,
+  ToolCase,
+  FileText,
+  List,
+  FilePlus,
+  Tags,
+} from "lucide-react";
 import React from "react";
 import {
   Sidebar,
@@ -10,8 +28,12 @@ import {
   SidebarGroupLabel,
   SidebarHeader,
   SidebarMenu,
+  SidebarMenuBadge,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarMenuSub,
+  SidebarMenuSubButton,
+  SidebarMenuSubItem,
   SidebarSeparator,
 } from "../ui/sidebar";
 import Link from "next/link";
@@ -24,7 +46,11 @@ import {
   DropdownMenuSeparator,
 } from "../ui/dropdown-menu";
 import { DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../ui/collapsible";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "../ui/collapsible";
 
 const items = [
   {
@@ -87,6 +113,11 @@ function AppSidebar() {
                       <span>{item.title}</span>
                     </a>
                   </SidebarMenuButton>
+                  {item.title === "Inbox" && (
+                    <SidebarMenuBadge className="outline-1 rounded-full p-2">
+                      19
+                    </SidebarMenuBadge>
+                  )}
                 </SidebarMenuItem>
               ))}
             </SidebarMenu>
@@ -133,7 +164,7 @@ function AppSidebar() {
                   <SidebarMenuItem>
                     <SidebarMenuButton asChild>
                       <Link href={"/"}>
-                        <ToolCase  />
+                        <ToolCase />
                         See All Services
                       </Link>
                     </SidebarMenuButton>
@@ -151,6 +182,52 @@ function AppSidebar() {
             </CollapsibleContent>
           </SidebarGroup>
         </Collapsible>
+        {/* NESTED */}
+        <SidebarGroup>
+          <SidebarGroupLabel>Blogs</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <Link href={"/"}>
+                    <FileText />
+                      Blog
+                  </Link>
+                </SidebarMenuButton>
+                <SidebarMenuSub>
+                  <SidebarMenuSubItem>
+                    <SidebarMenuSubButton asChild>
+                      <Link href={"/"}>
+                        <List />
+                         All Posts
+                      </Link>
+                    </SidebarMenuSubButton>
+                  </SidebarMenuSubItem>
+                </SidebarMenuSub>
+                <SidebarMenuSub>
+                  <SidebarMenuSubItem>
+                    <SidebarMenuSubButton asChild>
+                      <Link href={"/"}>
+                        <FilePlus />
+                         Add Post
+                      </Link>
+                    </SidebarMenuSubButton>
+                  </SidebarMenuSubItem>
+                </SidebarMenuSub>
+                <SidebarMenuSub>
+                  <SidebarMenuSubItem>
+                    <SidebarMenuSubButton asChild>
+                      <Link href={"/"}>
+                        <Tags />
+                         Categories
+                      </Link>
+                    </SidebarMenuSubButton>
+                  </SidebarMenuSubItem>
+                </SidebarMenuSub>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
         <SidebarMenu>
