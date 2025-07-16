@@ -20,7 +20,7 @@ function Navbar() {
     const { toggleSidebar, open } = useSidebar() // أضفت open للحصول على حالة الـ sidebar
     
   return (
-    <nav className="flex items-center justify-between p-4">
+    <nav className="flex items-center justify-between p-4 sticky bg-background sticky:bg-primary-foreground top-0 z-10">
       {/* LEFT */}
       <Button variant={"outline"} onClick={toggleSidebar} size="icon">
         {open ? (

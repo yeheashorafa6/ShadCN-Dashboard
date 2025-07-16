@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardContent, CardFooter, CardTitle } from "../ui/card";
 import Image from "next/image";
-import { Badge } from "lucide-react";
+import { Badge } from "../ui/badge";
 
 const popularContent = [
   {

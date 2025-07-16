@@ -29,9 +29,9 @@ const chartData = [
 ];
 function AppBarChart() {
   return (
-    <div className="flex flex-col gap-y-6">
+    <div className="flex flex-col gap-y-6  ">
         <h1 className="text-lg font-medium">Total Revenue</h1>
-      <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
+      <ChartContainer config={chartConfig} className="max-h-[400px] w-full">
         <BarChart accessibilityLayer data={chartData}>
           <CartesianGrid vertical={false} />
           <XAxis

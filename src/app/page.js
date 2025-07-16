@@ -2,6 +2,7 @@ import AppAreaChart from "@/components/AppAreaChart/AppAreaChart";
 import AppBarChart from "@/components/AppBarChart/AppBarChart";
 import AppPieChart from "@/components/AppPieChart/AppPieChart";
 import CardList from "@/components/CardList/CardList";
+import TodoList from "@/components/TodoList/TodoList";
 
 function Home() {
   return (
@@ -10,18 +11,18 @@ function Home() {
         <AppBarChart />
       </div>
       <div className="bg-primary-foreground p-4 rounded-lg">
-        <CardList title={"Popular Content"} />
+        <CardList title={"latest Transactions"} />
       </div>
       <div className="bg-primary-foreground p-4 rounded-lg">
         <AppPieChart />
       </div>
+      <div className="bg-primary-foreground p-4 rounded-lg"><TodoList/></div>
       <div className="bg-primary-foreground p-4 rounded-lg">
-        <CardList title={"latest Transactions"} />
-      </div>
-      <div className="bg-primary-foreground p-4 rounded-lg lg:col-span-2 xl:col-span-1 2xl:col-span-2">
         <AppAreaChart />
       </div>
-      <div className="bg-primary-foreground p-4 rounded-lg">test</div>
+      <div className="bg-primary-foreground p-4 rounded-lg lg:col-span-2 xl:col-span-1 2xl:col-span-2">
+        <CardList title={"Popular Content"} />
+      </div>
     </div>
   );
 }
